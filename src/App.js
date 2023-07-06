@@ -1,17 +1,21 @@
+import { useState } from "react";
+
 const messages = [
   "Learn React ⚛️",
   "Apply for jobs 💼",
   "Invest your new income 🤑",
 ];
 function App() {
-  let step = 1;
-  function handlePreviousBtn (){
-    step--
-    console.log(step);
+  const [step, setStep] = useState(1);
+  function handlePreviousBtn() {
+    if (step > 1) {
+      setStep(step - 1);
+    }
   }
-  function handleNextBtn (){
-    step++
-    console.log(step);
+  function handleNextBtn() {
+    if (step < 3) {
+      setStep(step + 1);
+    }
   }
 
   return (
